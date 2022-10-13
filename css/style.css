@@ -1,0 +1,486 @@
+@charset "utf-8";
+
+/* 레이아웃 */
+body {position: relative; background: #fff;}
+#header {position: absolute; top: 0; left: 0; width: 100%; height: 50px; padding: 0 28px; border-bottom: 1px solid #fff7f9; z-index: 2; box-sizing: border-box;}
+#contents {position: relative; background: #7681b6; width: 100%; height: 100vh; overflow: hidden; box-sizing: border-box;}
+#contents2 {position: relative; background: #d7dcf2;}
+#contents3 {position: relative; background: #e7e9f6; overflow: hidden;}
+#contents4 {position: relative; height: auto; background: #edeff9;}
+#footer {position: relative; background: #edeff9; border-top: 1px solid #7681b6; width: 100%; height: 70px; padding: 0 28px; box-sizing: border-box;}
+
+/* top */
+#top {text-align: center;}
+#top.hidden {display: none;}
+#top a {position: fixed; bottom: 4vw; right: 4vw; display: inline-block; width: 85px; height: 85px; padding: 24px 0 25px 0; box-sizing: border-box; border-radius: 50%; background: #7681b6; color: #fff; font-size: 22px; z-index: 10;}
+
+/* banning scrolling */
+body.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* loading */
+#loading.hidden {
+  display: none;
+}
+
+#loading_back {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+}
+
+#loading_back.show .bar {
+  transform: scale(1, 1) translate3d(0, 0, 0);
+  transform-origin: 0 0;
+}
+
+#loading_back .bar {
+  position: absolute;
+  width: 10.1vw;
+  background: #fff;
+  top: 0;
+  bottom: 0;
+  transform: scale(0, 1) translate3d(0, 0, 0);
+  transform-origin: 100% 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+#loading_back .bar:first-of-type {
+  border-left: none;
+}
+#loading_back .bar:nth-of-type(1) {
+  left: 0vw;
+  background: #fff7f9;
+  transition-delay: 0.05s;
+}
+#loading_back .bar:nth-of-type(2) {
+  left: 10vw;
+  background: #fff7f9;
+  transition-delay: 0.1s;
+}
+#loading_back .bar:nth-of-type(3) {
+  left: 20vw;
+  background: #fff7f9;
+  transition-delay: 0.15s;
+}
+#loading_back .bar:nth-of-type(4) {
+  left: 30vw;
+  background: #fff7f9;
+  transition-delay: 0.2s;
+}
+#loading_back .bar:nth-of-type(5) {
+  left: 40vw;
+  background: #fff7f9;
+  transition-delay: 0.25s;
+}
+#loading_back .bar:nth-of-type(6) {
+  left: 50vw;
+  background: #fff7f9;
+  transition-delay: 0.3s;
+}
+#loading_back .bar:nth-of-type(7) {
+  left: 60vw;
+  background: #fff7f9;
+  transition-delay: 0.35s;
+}
+#loading_back .bar:nth-of-type(8) {
+  left: 70vw;
+  background: #fff7f9;
+  transition-delay: 0.4s;
+}
+#loading_back .bar:nth-of-type(9) {
+  left: 80vw;
+  background: #fff7f9;
+  transition-delay: 0.45s;
+}
+#loading_back .bar:nth-of-type(10) {
+  left: 89.5vw;
+  background: #fff7f9;
+  transition-delay: 0.5s;
+}
+
+#loading_icon {
+    position: fixed;
+    top: 50%; left: 47%;
+    z-index: 50;
+}
+
+#loading_icon.hidden{
+  display: none;
+}
+
+.ball1, .ball2, .ball3 {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  float: left;
+  margin: 0 3px;
+}
+
+.ball1 {
+  background-color: #62abc1;
+  -webkit-animation: single1ball1anim 2s infinite linear;
+  animation: single1ball1anim 1s infinite linear;
+}
+
+@-webkit-keyframes single1ball1anim {
+  0% {
+     -webkit-transform: scale(1);
+     transform: scale(1);
+  }
+  12.5% {
+     -webkit-transform: scale(1.2);
+     transform: scale(1.5);
+  }
+  25%, 100% {
+     -webkit-transform: scale(1);
+     transform: scale(1)
+  }
+}
+
+@keyframes single1ball1anim {
+  0% {
+     -webkit-transform: scale(1);
+     transform: scale(1);
+  }
+  12.5% {
+     -webkit-transform: scale(1.2);
+     transform: scale(1.5);
+  }
+  25%, 100% {
+     -webkit-transform: scale(1);
+     transform: scale(1)
+  }
+}
+
+.ball2 {
+  background-color: #468295;
+  -webkit-animation: single1ball2anim 1s infinite linear;
+  animation: single1ball2anim 1s infinite linear;
+}
+
+@-webkit-keyframes single1ball2anim {
+  0%, 25% {
+     -webkit-transform: scale(1);
+     transform: scale(1);
+  }
+  37.5% {
+     -webkit-transform: scale(1.2);
+     transform: scale(1.5)
+  }
+  50%, 100% {
+     -webkit-transform: scale(1);
+     transform: scale(1);
+  }
+}
+
+@keyframes single1ball2anim {
+  0%, 25% {
+     -webkit-transform: scale(1);
+     transform: scale(1);
+  }
+  37.5% {
+     -webkit-transform: scale(1.2);
+     transform: scale(1.5)
+  }
+  50%, 100% {
+     -webkit-transform: scale(1);
+     transform: scale(1);
+  }
+}
+
+.ball3 {
+  background-color: #34616f;
+  -webkit-animation: single1ball3anim 1s infinite linear;
+  animation: single1ball3anim 1s infinite linear;
+}
+
+@-webkit-keyframes single1ball3anim {
+  0%, 50% {
+     -webkit-transform: scale(1);
+     transform: scale(1);
+  }
+  62.5% {
+     -webkit-transform: scale(1.2);
+     transform: scale(1.5)
+  }
+  75%, 100% {
+     -webkit-transform: scale(1);
+     transform: scale(1);
+  }
+}
+
+@keyframes single1ball3anim {
+  0%, 50% {
+     -webkit-transform: scale(1);
+     transform: scale(1);
+  }
+  62.5% {
+     -webkit-transform: scale(1.2);
+     transform: scale(1.5)
+  }
+  75%, 100% {
+     -webkit-transform: scale(1);
+     transform: scale(1);
+  }
+}
+
+/* 헤더 영역 */
+.header {position: relative;}
+.header h1 {display: inline-block; font-family: 'Montserrat', sans-serif; font-size: 21px; font-weight: 500; color: #fff7f9; line-height: 50px;}
+.header svg {position: absolute; top: 8px; right: 0; display: inline-block; float: right; width: 30px; height: 30px; fill: #fff7f9;}
+
+/* 컨텐츠 영역 svg */
+.cont2 svg, 
+.cont3 svg, 
+.cont4 svg {width: 4vw; height: 4vw; fill: #7681b6;}
+
+/* 컨텐츠 영역1-회전 */
+.cont1 div.loader {position: absolute; top: 20vh; left: 25%;}
+.loader {
+width: 40vw;
+height: 40vw;
+border-radius: 50%;
+margin: 3em;
+display: inline-block;
+position: relative;
+vertical-align: middle;
+}
+.loader,
+.loader:before,
+.loader:after {
+animation: 2s infinite ease-in-out;
+}
+.loader:before,
+.loader:after {
+width: 10%; 
+height: 10%;
+border-radius: 50%;
+position: absolute;
+top: 0;
+left: 0;
+}
+
+.loader-black {background-color: #fff7f9;}
+
+.loader-7 {
+animation: loader7-1 2s infinite linear;
+}
+
+.loader-7:before,
+.loader-7:after {
+content: '';
+width: 8%;
+height: 8%;
+background-color: #fff7f9;
+top: 5%;
+}
+
+.loader-7:before {
+left: -5%;
+animation: loader7-2 1s infinite alternate ease-in-out;
+transform-origin: 10% 50%;
+
+}
+.loader-7:after {
+left: auto;
+right: -5%;
+animation: loader7-2 1s 1s infinite alternate ease-in-out;
+transform: scale(0);
+transform-origin: 90% 50%;
+}
+
+@keyframes loader7-1 {
+    0%   { transform: rotate(20deg); }
+    100% { transform: rotate(380deg); }
+}
+
+@keyframes loader7-2 {
+    0%   { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+/* 컨텐츠 영역1-메인텍스트 */
+.cont1 {position: relative; padding: 20vh 0 0; transition: .3s;}
+.cont1 .main_text {width: 100%; height: 60vh;}
+.cont1 .main_text span {font-family: 'PyeongChangPeace-light'; line-height: 1.5em; display: block; color: #befbec; transition: .3s}
+.cont1 .main_text span.mov_left {font-size: 5vw; margin: 0 0 0 70vw;}
+.cont1 .main_text span.mov_right {margin: 0 0 0 10vw;}
+.cont1 .main_text span:first-child {font-family: 'PyeongChangPeace-Bold'; font-size: 7vw;}
+.cont1 .main_text span em {font-family: 'PyeongChangPeace-Bold'; font-size: 7vw; display: block; color: #fff7f9; margin: 3vw 0 0 2vw;}
+
+/* 컨텐츠 영역1-스크롤 */
+.cont1 div:nth-child(3) {text-align: center; font-family: 'Montserrat', sans-serif; font-size: 1.3vw; color: #befbec; animation: updown .8s infinite ease-in-out;}
+.cont1 div:nth-child(3) span i {display: block;}
+
+@keyframes updown {
+    from {transform: translateY(0px);}
+    to {transform: translateY(10px);}
+}
+
+/* 컨텐츠 영역2 */
+.cont2 {position: relative; margin: 0 auto; transition: .3s;}
+.cont2 .main_text {padding: 15vw 12vw; text-align: center;}
+.cont2 .main_text h2 {font-size: 4vw; color: #7681b6; font-weight: 500;}
+.cont2 .main_text h2 em {font-size: 5vw; font-family: 'PyeongChangPeace-Bold'; color: #45e0ba;}
+.cont2 .main_text .desc {margin: 4vh 0 0 0; height: auto; display: flex; flex-direction: column; justify-content: space-between;}
+.cont2 .main_text .desc p {font-size: 1.5vw; line-height: 3vw; font-family: 'EnvironmentR'; color: #3a4681;}
+.cont2 .main_text .desc p em {display: block; font-weight: 600;}
+.cont2 .main_text .desc #desc1 {padding-bottom: 2vh; translateY:(30px); opacity: 0; transition: .5s;}
+.cont2 .main_text .desc #desc2 {padding-bottom: 2vh; translateY:(30px); opacity: 0; transition: 1s;}
+.cont2 .main_text .desc #desc3 {transform: translateY(30px); opacity: 0; transition: 1s;}
+
+.cont2 .main_text .desc #desc1.show {transform: translateY(0px); opacity: 1;}
+.cont2 .main_text .desc #desc2.show {transform: translateY(0px); opacity: 1;}
+.cont2 .main_text .desc #desc3.show {transform: translateY(0px); opacity: 1;}
+
+/* 컨텐츠 영역3 */
+.cont3 {position: relative; width: 100%; margin: 0 auto; padding: 15vw; text-align: center; box-sizing:border-box; transition: .3s;}
+.cont3 .port {padding: 5vw 0 0 0; display: flex; flex-direction: column; align-items: center; height: auto;}
+.cont3 .port > div {width: 100%; height: auto; padding: 2vw 0 0 0; box-sizing: border-box;}
+.cont3 .port > div > div.port_desc {padding: 5vw 1vw; box-sizing: border-box;}
+.cont3 .port > div > div {text-align: left; width: 50%; margin: 0 auto; padding: 0 2vw; box-sizing: border-box;}
+.cont3 .port > div > div > p {font-size: 1.5vw; line-height: 3vw; font-family: 'EnvironmentR'; color: #3a4681; padding: 0 0 2vw 0;}
+.cont3 .port > div > div > span a {font-size: 1.2vw; padding: .8vw 1.5vw; border-radius: 10px; background: #7681b6; color: #fff; text-transform: uppercase; transition: .5s;}
+.cont3 .port > div > div > span a:hover {box-shadow: inset 300px 0 rgba(0,0,0,0.2);}
+.cont3 h2 {font-family: 'Montserrat', sans-serif; font-size: 4vw; color: #7681b6; font-weight: 500;}
+.cont3 h2 em {font-size: 5vw; font-family: 'PyeongChangPeace-Bold'; color: #45e0ba;}
+.cont3 .port figcaption {display: none; font-size: 1.3vw; font-family: 'EnvironmentR'; color: #3a4681; padding: 1vw 0 0;}
+.cont3 .port figcaption span {margin: 2vw 0 0;}
+.cont3 .port figcaption span a {font-size: 1.2vw; padding: .8vw 1.5vw; font-family: 'Montserrat', sans-serif; border-radius: 10px; background: #7681b6; color: #fff; text-transform: uppercase; transition: .5s;  font-family: 'Montserrat', sans-serif;}
+.cont3 .port figcaption span a:hover {box-shadow: inset 250px 0 rgba(0,0,0,0.2);}
+
+.cont3 .port #port1 {display: flex; align-items: center; padding-bottom: 1vh; opacity: 0; transform: translateX(-300px); transition: .5s;}
+.cont3 .port #port1.show {opacity: 1; transform: translateX(0px);}
+.cont3 .port #port2 {display: flex; align-items: center; padding-bottom: 1vh; opacity: 0; transform: translateX(300px); transition: .5s;}
+.cont3 .port #port2.show {opacity: 1; align-items: center; transform: translateX(0px);}
+.cont3 .port #port3 {display: flex; align-items: center; padding-bottom: 1vh; opacity: 0; transform: translateX(-300px); transition: .5s;}
+.cont3 .port #port3.show {opacity: 1; transform: translateX(0px);}
+.cont3 .port #port4 {display: flex; align-items: center; opacity: 0; transform: translateX(300px); transition: .5s;}
+.cont3 .port #port4.show {opacity: 1; transform: translateX(0px);}
+
+/* 컨텐츠 영역4 */
+.cont4 {position: relative; width: 100%; margin: 0 auto; padding: 15vw; text-align: center; box-sizing:border-box; transition: .3s;}
+.cont4 h2 {font-family: 'Montserrat', sans-serif; font-size: 4vw; color: #7681b6; font-weight: 500;}
+.cont4 h2 em {font-size: 5vw; font-family: 'PyeongChangPeace-Bold'; color: #45e0ba;}
+.cont4 .port {height: auto; padding: 5vw 2vw 0 2vw; margin: 0 auto; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between;}
+.cont4 .port div {
+  display: flex;
+  justify-content: space-between;
+}
+#de2, #de3, #de4, #de5, #de6, #de7, #de8, #de9 {
+  width: 49%;
+}
+#de1, #de2, #de3, #de4, #de5, #de6, #de7, #de8, #de9 {
+  opacity: 0;
+}
+#de1.show {opacity: 1; transition: 1s;}
+#de2.show {opacity: 1; transition: 1s;}
+#de3.show {opacity: 1; transition: 1s;}
+#de4.show {opacity: 1; transition: 1s;}
+#de5.show {opacity: 1; transition: 1s;}
+#de6.show {opacity: 1; transition: 1s;}
+#de7.show {opacity: 1; transition: 1s;}
+#de8.show {opacity: 1; transition: 1s;}
+#de9.show {opacity: 1; transition: 1s;}
+
+
+/* 푸터 영역 */
+.footer_text {padding: 15px 0 0 0;}
+.footer_text svg {display: inline-block; width: 25px; height: 25px; fill: #7681b6;}
+.footer_text h1 {display: inline-block; font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 500; color: #7681b6; line-height: 50px;}
+.footer_text address {float: right; padding: 20px 0 0; color: #7681b6; font-family: 'Montserrat', sans-serif;}
+
+
+
+@media (max-width: 1500px){
+   
+}
+
+
+@media (max-width: 1290px){
+    .cont1 {padding: 25vh 0 0;}
+    .cont1 .main_text span.mov_left {font-size: 6vw; margin: 0 0 0 70vw;}
+    .cont1 .main_text span:first-child {font-size: 8vw;}
+    .cont1 .main_text span em {font-size: 8vw;}
+    .cont2 .main_text .desc p {font-size: 1.7vw;}
+    .cont3 .port > div > div > p {font-size: 1.7vw;}
+    .cont1 div:nth-child(3) {font-size: 1.4vw;}
+}
+
+@media (max-width: 1024px){
+    .cont1 div:nth-child(3) {font-size: 1.5vw;}
+    .cont3 .port > div > div > p {font-size: 1.8vw;}
+    .cont2 .main_text .desc p {font-size: 1.8vw;}
+    .cont2 .main_text .desc {height: auto;}
+}
+
+@media (max-width: 960px){
+    .cont1 div.loader {top: 20vh; left: 15%;}
+    .loader {
+        width: 60vw;
+        height: 60vw;
+    }
+    
+    .cont1 {position: relative; padding: 30vh 0 0;}
+    .cont1 .main_text span.mov_left {font-size: 6vw; margin: 0 0 0 70vw;}
+    .cont1 .main_text span:first-child {font-size: 8vw;}
+    .cont1 .main_text span em {font-size: 8vw;}
+    
+    .cont2 .main_text .desc p {font-size: 2vw;}
+
+    .cont3 .port {height: auto;}
+    .cont3 .port > div > div > p {font-size: 2vw;}
+    .cont4 .port {height: auto;}
+}
+
+@media (max-width: 768px){
+    .top a {width: 70px; height: 70px; padding: 20px 0 25px 0; font-size: 20px;}
+    .cont1 div:nth-child(3) {font-size: 2vw;}
+
+    .cont2 .main_text .desc {height: auto;}
+    .cont2 .main_text .desc p {font-size: 2.5vw; line-height: 5vw;}
+
+    .cont3 .port {height: auto;}
+    .cont3 .port > div {width: 55vw;}
+    .cont3 .port > div > div {float: none; width: 100%; padding: 0 7vw;}
+    .cont3 .port > div > div.port_desc {display: none;}
+    
+    .cont3 .port figure figcaption {display: block; font-size: 2.5vw; text-align: center;}
+    .cont3 .port figure figcaption span {display: block; font-size: 2vw;}
+    
+    .cont4 {height: auto;}
+    .cont4 .port div {
+      display: block;
+      flex-direction: column;
+    }
+
+    #de2, #de3, #de4, #de5, #de6, #de7, #de8, #de9 {
+      width: 100%;
+    }
+    
+}
+
+@media (max-width: 600px){
+    .cont1 .main_text {height: auto;}
+    .cont2 .main_text .desc p {font-size: 2.8vw;}
+
+    
+    .cont3 .port > div {height: auto;}
+    .cont3 .port figcaption {font-size: 2.8vw;}
+    .cont3 .port figcaption span a {font-size: 2.5vw;}
+}
+
+@media (max-width: 480px){
+   .top a {width: 50px; height: 50px; padding: 12px 0 20px 0; font-size: 18px;}
+   .cont2 .main_text .desc p {font-size: 3.2vw; line-height: 5.3vw;}
+   .cont3 .port > div {height: auto;}
+   .cont3 .port figure figcaption {font-size: 3.2vw;}
+   .cont3 .port figure figcaption span a {font-size: 3.2vw;}
+}
+
