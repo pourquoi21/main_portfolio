@@ -1,6 +1,6 @@
 # main_portfolio
 
-### View site: https://pourquoi21.github.io/main_portfolio/
+### [View site](https://pourquoi21.github.io/main_portfolio/)
 
 ### Introduction
 My first main portfolio. I made it using Jquery at first, but this is one editted using JavaScript.
